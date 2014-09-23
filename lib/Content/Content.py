@@ -1,12 +1,17 @@
-""" Media.py - Base Class
+""" Content.py - Base Class
 """
 from __future__ import absolute_import
 
-class Media(object):
+class Content(object):
 
     @property
     def title(self):
         return self._title
+
+    @property
+    # form of content, e.g. video, audio, etc.
+    def form(self):
+        return self._type
 
     @property
     def physical_storage(self):
@@ -22,7 +27,9 @@ class Media(object):
 
     def __init__(self, 
                  title=None,
+                 content_type=None,
                  storage=None
                 ):
         self._title = title
+        self._content_type = type
         self._storage = storage

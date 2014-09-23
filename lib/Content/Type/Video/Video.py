@@ -10,6 +10,10 @@ class Video(Media):
         return self._studio
 
     @property
+    def distributor(self):
+        return self._distributor
+
+    @property
     def producers(self):
         return self._producers
     def add_producer(self, producer):
@@ -75,7 +79,7 @@ class Video(Media):
                  actors=[]
                 ):
         
-        super(Video, self).__init__(title)
+        super(Video, self).__init__(title=title, content_type="Video")
         self._producers = producers
         self._directors = directors
         self._screenwriters = screenwriters
